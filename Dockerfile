@@ -8,7 +8,7 @@ USER 0
 ## Install a gedit
 RUN apt update
 RUN apt -y install imagemagick xclip simplescreenrecorder
-RUN cp ./ww3_screen.sh /usr/bin
+COPY ./ww3_screen.sh /usr/bin
 RUN chmod +x /usr/bin/ww3_screen.sh
 
 
