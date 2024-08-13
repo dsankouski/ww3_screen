@@ -15,6 +15,7 @@ if [ "$action" = 'start' ]; then
 	cat <<- EOF > /etc/cron.d/ww3-"$game_id"
 	*/1 * * * * sh -c 'import -window "$window_id" ~/ww3/$game_id/screen-$(date +%y-%m-%d-%H:%M:%S).png'
 	EOF
+	/etc/init.d/cron start;
 elif [ "$action" == 'stop' ]; then
   rm -rf /etc/cron.d/ww3-"$game_id"
 else
